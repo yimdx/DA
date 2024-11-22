@@ -1,0 +1,5 @@
+.conda/
+datasets/
+
+*.json
+__pycache__/egnn_clean.cpython-310.pyc

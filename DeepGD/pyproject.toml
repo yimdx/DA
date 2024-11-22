@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "deepgd"
+version = "0.1.0"
+description = "This repo contains a simple demonstration for the IEEE CG&A21 paper entitled \"DeepGD: A Deep Learning Framework for Graph Drawing Using GNN\""
+authors = ["Xiaoqi Wang <xiaoqiwang2582@gmail.com>"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "~3.10"
+torch = "~2.0"
+torch-geometric = "^2.3"
+torch-scatter = { version = "2.1.1", source = "pyg-cuda" }
+torch-sparse = { version = "0.6.17", source = "pyg-cuda" }
+
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[[tool.poetry.source]]
+name = "pyg-cpu"
+url = "https://data.pyg.org/whl/torch-2.0.0+cpu.html"
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "pyg-cuda"
+url = "https://data.pyg.org/whl/torch-2.0.0+cu118.html"
+priority = "primary"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
