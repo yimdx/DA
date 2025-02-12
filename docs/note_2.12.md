@@ -46,3 +46,7 @@ Use pmds as real layout, generator can generate a compatitable layout compared t
 2. How to do graph coarsening(what coarsening method should be applied)
 
 ## Visualization
+
+[See more details in another file: EGNN_DeepGD](../Egnn_DeepGD/visualization/visualization.md)
+
+[See more details in another file: EGNN_SmartGD](../Egnn_SmartGD/visualization/visualization.md)
