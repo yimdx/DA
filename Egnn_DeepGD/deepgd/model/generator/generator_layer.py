@@ -65,7 +65,7 @@ class GeneratorLayer(nn.Module):
                 in_dim=self.config.in_dim,
                 out_dim=self.config.out_dim,
                 hidden_dim=self.config.hidden_dim,
-                edge_feat_dim=self.edge_feat_provider.get_feature_channels()
+                edge_feat_dim=self.config.edge_feat_dim
             ),
             config=EGNNBasicLayer.Config(
                 dense=self.gnn_config.dense,
@@ -90,11 +90,7 @@ class GeneratorLayer(nn.Module):
         return self.gnn_layer(
             coords=coords,
             node_feat=node_feat,
-            edge_feat=self.edge_feat_provider(
-                node_feat=node_feat,
-                edge_index=edge_index,
-                edge_attr=edge_feat
-            ),
+            edge_feat=edge_feat,
             edge_index=edge_index,
             batch_index=batch_index,
             num_sampled_nodes_per_hop=num_sampled_nodes_per_hop,

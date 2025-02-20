@@ -65,7 +65,7 @@ class Discriminator(nn.Module):
                 hidden_width=self.params.hidden_width,
                 hidden_depth=self.params.num_layers,
                 edge_attr_dim=self.params.edge_attr_dim,
-                node_attr_dim=2
+                node_attr_dim=16
             ),
             edge_net_params=DiscriminatorBlock.EdgeNetParams(
                 shared_depth=self.params.edge_net_shared_depth,

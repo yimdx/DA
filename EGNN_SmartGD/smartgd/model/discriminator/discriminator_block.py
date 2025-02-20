@@ -101,10 +101,11 @@ class DiscriminatorBlock(nn.Module):
                 edge_attr: torch.FloatTensor,
                 batch_index: torch.LongTensor) -> torch.FloatTensor:
         edge_feat = self.shared_edge_net(
-            node_feat=coords,
+            node_feat=node_feat,
             edge_attr=edge_attr,
             edge_index=edge_index
         )
+        # edge_feat = edge_attr
         outputs = node_feat
         for layer in self.layer_list:
             outputs, coords, _ = layer(

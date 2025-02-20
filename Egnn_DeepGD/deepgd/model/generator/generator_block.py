@@ -127,8 +127,7 @@ class GeneratorBlock(nn.Module):
                 out_dim=out_dim,
                 hidden_dim=out_dim, # stub use out dim to present hidden_dim
                 node_feat_dim=in_dim,
-                edge_feat_dim=(router.get_output_channels()
-                               if router.input_source else self.config.edge_attr_dim)
+                edge_feat_dim=self.config.edge_attr_dim
             ),
             edge_net_config=self.edge_net_config,
             gnn_config=self.gnn_config,
@@ -166,7 +165,7 @@ class GeneratorBlock(nn.Module):
         outputs, coords, _ = self.first_layer(
             coords=coords,
             node_feat=node_feat,
-            edge_feat=first_layer_edge_feat,
+            edge_feat=edge_attr,
             edge_index=init_edge_index,
             batch_index=batch_index,
             num_sampled_nodes_per_hop=num_sampled_nodes_per_hop,
@@ -177,7 +176,7 @@ class GeneratorBlock(nn.Module):
             outputs, coords, _ = layer(
                 coords=coords,
                 node_feat=outputs,
-                edge_feat=rest_layers_edge_feat,
+                edge_feat=edge_attr,
                 edge_index=edge_index,
                 batch_index=batch_index,
                 num_sampled_nodes_per_hop=num_sampled_nodes_per_hop,
@@ -185,7 +184,7 @@ class GeneratorBlock(nn.Module):
             )
 
         edge_index = init_edge_index
-
+        self.residual = False
         if self.residual:
             outputs = self.skip(
                 block_input=node_feat,

@@ -72,7 +72,7 @@ class Generator(nn.Module):
             out_dim=self.params.block_output_dim,
             edge_attr_dim=self.params.edge_attr_dim,
             node_attr_dim=self.params.node_attr_dim,
-            dynamic_edge_feat_mode=self.block_config.relative_edge_feat_mode,
+            dynamic_edge_feat_mode=None,
             residual=self.block_config.residual
         )
         main_edge_net_config = GeneratorLayer.EdgeNetConfig(
