@@ -4,7 +4,7 @@
 ### Idea
 Graph embedding suffers from scalability issues, and hierarchical methods (e.g., graph coarsening) can help by reducing the graph size while preserving important structures. However, choosing the best coarsening strategy is non-trivial.
 
-As a result, we aim to use deep learning to automate or assist in selecting the best hierarchical method.
+Therefore, can we use deep learning to automate or assist in selecting the best hierarchical method?
 
 - Training a model to **predict the effectiveness** of different coarsening methods.
 - Using features from the original graph (or intermediate representations) to guide selection.
