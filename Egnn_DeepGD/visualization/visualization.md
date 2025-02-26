@@ -1,4 +1,4 @@
-| Graph | egnn_deepgd | egnn_deepgd_when_rotating_input(angle=0.9) | egnn_deepgd_manual_rotate_on_results(angle=0.9) | pmds |
+| Graph | egnn_deepgd | egnn_deepgd_after_rotate(angle=0.9) | egnn_deepgd_manual_rotate(angle=0.9) | pmds |
 |--------|------------|-------------------------|--------------------------|------|
 | Batch 0 | ![](egnn_deepgd/graph_epoch_0_batch_0_graph_0.png) | ![](egnn_deepgd_after_rotate/graph_epoch_0_batch_0_graph_0.png) | ![](egnn_deepgd_manual_rotate/graph_epoch_0_batch_0_graph_0.png) | ![](pmds/graph_epoch_0_batch_0_graph_0.png) |
 | Batch 1 | ![](egnn_deepgd/graph_epoch_0_batch_1_graph_0.png) | ![](egnn_deepgd_after_rotate/graph_epoch_0_batch_1_graph_0.png) | ![](egnn_deepgd_manual_rotate/graph_epoch_0_batch_1_graph_0.png) | ![](pmds/graph_epoch_0_batch_1_graph_0.png) |
