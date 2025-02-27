@@ -14,14 +14,15 @@ The fake logit of discriminator stay consistant when rotating:
 
 |before rotate for fake|after rotate for fake|before rotate for real|after rotate for real|
 |--------------|----------|------|-------|
-|-554.6|-556.8|-730.2|-731.6|
+|-388.0|-388.0|-592.6|-592.6|
 
 But when rotateing the init_pos of generator, the result is not ok.
 
 |after rotate for fake|after rotate for real|
 |--------------|----------|
-|-573.4|-747.5|
+|-388.3|-592.6|
 
+The reason why fake logits is better than real logits: fake score is smaller than real logit, meaning real pos should be replaced.
 
 ## EGNN property
 
